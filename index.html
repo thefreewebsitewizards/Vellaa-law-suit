@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laws-Bell Mobile Notary Home</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af37", // Metallic Gold
+                        "primary-dark": "#b08d1a", 
+                        "secondary": "#990000", // Richer Deep Red to match card
+                        "soft-pink": "#ffe6f2", // Soft pink from wedding flyer
+                        "rose-pink": "#ffccd5", // Rose accent
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "script": ["Great Vibes", "cursive"],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b08d1a 100%)',
+                        'wedding-gradient': 'linear-gradient(to bottom, #fff0f5, #ffe6f2)',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-script {
+            font-family: 'Great Vibes', cursive;
+        }
+        .text-gold {
+            color: #d4af37;
+        }
+        .border-gold {
+            border-color: #d4af37;
+        }
+        .bg-gold {
+            background-color: #d4af37;
+        }
+        .gold-shimmer {
+            background: linear-gradient(45deg, #b08d1a, #f3e5ab, #d4af37, #b08d1a);
+            background-size: 200% auto;
+            color: #000;
+            transition: 0.5s;
+        }
+        .gold-shimmer:hover {
+            background-position: right center;
+        }
+        .wedding-flourish {
+            background-image: radial-gradient(circle at center, #ffe6f2 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[#d4af37]/30 shadow-sm">
+<div class="bg-gradient-to-r from-[#990000] via-[#b30000] to-[#990000] text-white py-1.5 text-center text-xs md:text-sm font-semibold tracking-wide border-b border-[#d4af37]">
+<span class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#f3e5ab]">schedule</span> 
+            Available Evenings and Weekends
+        </span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between py-3 md:py-4">
+<div class="flex items-center gap-3 mb-4 md:mb-0">
+<div class="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-[#d4af37] overflow-hidden p-0.5 bg-white shadow-md">
+<div class="w-full h-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBH9MZhn8qCcCVuIh1JbdRQ0Oe3Vm2MQZSVHOqZj-Us0z1eBd0X0FIAl5d4FjlwxQQLtx6niIUc5_WFWHXVG4UmJ_Q8E1cHknC82O4_U_athr-lFwCmwKhnjdamiSCUK0ZOrJRLC2RGQBRsTVsyZUI9IcDQVgcecT09Xk7ODVszAp6oRyXk8b9xX5bXsJhQPP4Z-FjSSVYyDUihpiKSZdIZtwT9SQonW1vT3r-A3V2T0EatK2Bc3y19q3fQfUlpkdXinnBtzSzIAA");'></div> 
+</div>
+<div class="flex flex-col">
+<h1 class="text-3xl md:text-4xl font-script text-[#990000] leading-none drop-shadow-sm" style="text-shadow: 1px 1px 0px rgba(212, 175, 55, 0.3);">Laws-Bell</h1>
+<p class="text-xs text-slate-800 font-serif font-bold tracking-widest uppercase mt-1 pl-1">Mobile Notary Service</p>
+</div>
+</div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-8 items-center">
+<a class="text-sm font-medium text-slate-800 hover:text-[#990000] transition-colors relative group" href="#home">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#990000] transition-all group-hover:w-full"></span>
+</a>
+<a class="text-sm font-medium text-slate-800 hover:text-[#990000] transition-colors relative group" href="#notary-services">
+                    Notary Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#990000] transition-all group-hover:w-full"></span>
+</a>
+<a class="text-sm font-medium text-slate-800 hover:text-[#990000] transition-colors relative group" href="#officiant-services">
+                    Officiant Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#990000] transition-all group-hover:w-full"></span>
+</a>
+<a class="text-sm font-medium text-slate-800 hover:text-[#990000] transition-colors relative group" href="#fees">
+                    Fees &amp; Travel
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#990000] transition-all group-hover:w-full"></span>
+</a>
+<a class="px-5 py-2 text-sm font-bold bg-gradient-to-r from-[#d4af37] to-[#b08d1a] text-white rounded-full hover:shadow-glow transition-all shadow-sm" href="#contact">
+                    Contact
+                </a>
+</nav>
+</div>
+</div>
+</header>
+<section class="relative w-full min-h-[550px] md:min-h-[650px] flex items-center justify-center overflow-hidden bg-[#660000]" id="home">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-[#4a0000] via-[#800000] to-[#b30000] opacity-100"></div>
+<div class="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-[#b08d1a] via-[#f3e5ab] to-[#b08d1a] shadow-lg z-20"></div>
+<div class="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#f3e5ab]/60 bg-black/30 text-[#f3e5ab] text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-lg">
+<span class="material-symbols-outlined text-sm">verified</span> Licensed &amp; Bonded
+        </div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-script text-white mb-2 leading-tight drop-shadow-xl" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            We bring the <span class="text-[#f3e5ab]">Stamp</span> to You
+        </h1>
+<div class="w-32 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mb-6"></div>
+<p class="text-lg md:text-2xl text-white/95 max-w-3xl mb-4 font-serif leading-relaxed italic">
+            "Professional, reliable, and convenient mobile notary services."
+        </p>
+<div class="flex items-center gap-2 text-[#f3e5ab] mb-10 font-semibold bg-black/20 px-4 py-2 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined fill-current">location_on</span>
+<span class="uppercase tracking-wide text-sm md:text-base">Serving Memphis &amp; Surrounding Areas</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-5 w-full justify-center">
+<button class="gold-shimmer px-10 py-4 rounded-full font-bold text-[#4a0000] shadow-[0_0_20px_rgba(212,175,55,0.4)] transform hover:-translate-y-1 transition-all border border-[#f3e5ab] flex items-center justify-center gap-2 text-lg" data-scroll-to="contact" data-cta="book-appointment">
+<span class="material-symbols-outlined">calendar_month</span> Book an Appointment
+            </button>
+<button class="px-10 py-4 rounded-full font-bold text-white border-2 border-[#f3e5ab]/50 hover:bg-white/10 hover:border-[#f3e5ab] backdrop-blur-sm transition-all flex items-center justify-center gap-2 text-lg" data-action="call" data-phone="+15551234567">
+<span class="material-symbols-outlined">call</span> Call Now
+            </button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-16 overflow-hidden">
+<svg class="relative block w-full h-full fill-background-light" preserveAspectRatio="none" style="transform: rotate(180deg);" viewBox="0 0 1200 120">
+<path class="fill-[#d4af37]" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<section class="py-24 bg-background-light relative" id="about">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 relative group">
+<div class="absolute -inset-2 bg-gradient-to-br from-[#d4af37] to-[#b08d1a] rounded-full opacity-70 blur-sm group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative w-72 h-72 md:w-96 md:h-96 mx-auto rounded-full border-[6px] border-[#d4af37] shadow-2xl overflow-hidden bg-white">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbO4JmaLsi600z_ICGrCBWnZ72Lzf9C5qWnvU4AwoXPYeAkJc7C5MbY4DJeiZuEVstfnprI-DebAtYBHBZ3mJn78TiSzqb08BfLm3HNFd6zD_ie3Sk_YcH9WqBiuM-aR1Wr1Tbxjl5sOHMEoElYo1kz-Tfp0GXsuChFu9s9Qkx5Q_JsL7k-JM16rkzUkVM1GLa7PrpEDuV6QdCWkTYJPb380mbxLIFDpLbgF5wS_gBBdTO8y7KdqwzDINS6TW_tVIvxQ_PXwT6lA");'></div>
+</div>
+<div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#990000] to-[#660000] px-8 py-2 shadow-lg rounded-full border-2 border-[#d4af37]">
+<p class="font-script text-3xl text-white whitespace-nowrap">Vella Laws-Bell</p>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left pt-8 md:pt-0">
+<h2 class="text-[#990000] text-sm font-bold tracking-[0.2em] uppercase mb-4 border-b border-[#d4af37]/30 pb-2 inline-block">About Your Notary</h2>
+<h3 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Experience You Can Trust</h3>
+<p class="text-slate-600 text-lg leading-relaxed mb-8 font-serif">
+                    With years of experience and a dedication to precision, I provide trustworthy mobile notary services that prioritize your time and legal security. Whether it's a loan signing or a last-minute affidavit, I ensure every seal is perfect.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col p-4 bg-white border border-[#d4af37]/30 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-[#d4af37] text-3xl mb-2">verified_user</span>
+<span class="font-bold text-[#990000] text-sm uppercase tracking-wide">Background Checked</span>
+</div>
+<div class="flex flex-col p-4 bg-white border border-[#d4af37]/30 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-[#d4af37] text-3xl mb-2">workspace_premium</span>
+<span class="font-bold text-[#990000] text-sm uppercase tracking-wide">NNA Certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white relative" id="notary-services">
+<div class="absolute right-0 top-20 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[400px] text-[#990000]">history_edu</span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-serif font-bold text-[#990000] mb-4 drop-shadow-sm">Notary Services</h2>
+<div class="w-24 h-1 bg-[#d4af37] mx-auto mb-6"></div>
+<p class="text-slate-600 max-w-2xl mx-auto font-serif text-lg">Comprehensive notarization for all your legal documents, handled with confidentiality and care.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="Power of Attorney" aria-label="Book Power of Attorney notarization">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">Power of Attorney</h3>
+<p class="text-slate-600 leading-relaxed">Securely designating authorized agents for financial or medical decisions.</p>
+</div>
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="Wills &amp; Trusts" aria-label="Book Wills and Trusts notarization">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">history_edu</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">Wills &amp; Trusts</h3>
+<p class="text-slate-600 leading-relaxed">Ensuring your estate plans and last wishes are legally binding and properly sealed.</p>
+</div>
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="Real Estate Closings" aria-label="Book Real Estate Closings notarization">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">real_estate_agent</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">Real Estate Closings</h3>
+<p class="text-slate-600 leading-relaxed">Smooth loan signing and property document handling for buyers and sellers.</p>
+</div>
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="Affidavits &amp; I-9s" aria-label="Book Affidavits and I-9s notarization">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">fingerprint</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">Affidavits &amp; I-9s</h3>
+<p class="text-slate-600 leading-relaxed">Verifying identity and sworn statements for employment or legal proceedings.</p>
+</div>
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="Adoption Papers" aria-label="Book Adoption Papers notarization">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">Adoption Papers</h3>
+<p class="text-slate-600 leading-relaxed">Sensitive handling of domestic and international adoption documentation.</p>
+</div>
+<div class="group relative p-8 bg-[#fcfbf8] rounded-xl border border-[#d4af37]/20 hover:border-[#d4af37] shadow-lg hover:shadow-2xl transition-all duration-300" role="button" tabindex="0" data-scroll-to="contact" data-service="General Notary" aria-label="Book General Notary service">
+<div class="w-14 h-14 rounded-full bg-white border-2 border-[#d4af37] flex items-center justify-center mb-6 text-[#990000] group-hover:bg-[#990000] group-hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined text-3xl">diversity_3</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">General Notary</h3>
+<p class="text-slate-600 leading-relaxed">Travel consent forms, contracts, bills of sale, and other miscellaneous documents.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative overflow-hidden" id="officiant-services" style="background: linear-gradient(to bottom, #fff0f5, #fff5f8);">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-40 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-rose-pink rounded-full blur-[100px] opacity-30"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-[120px] opacity-10"></div>
+<div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+<svg class="relative block w-[calc(100%+1.3px)] h-[50px] fill-white" data-name="Layer 1" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-5xl font-script text-[#990000] mb-2 drop-shadow-sm">Laws-Bell Wedding Officiant</h3>
+<p class="text-xl text-[#d4af37] font-serif italic mb-6">"Making Your Wedding Day Magical &amp; Memorable"</p>
+<div class="flex justify-center items-center gap-4 mb-6">
+<div class="h-[1px] w-16 bg-[#d4af37]"></div>
+<span class="material-symbols-outlined text-rose-400">favorite</span>
+<div class="h-[1px] w-16 bg-[#d4af37]"></div>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-3 max-w-4xl mx-auto mb-10 text-slate-700 font-serif text-lg">
+<span class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Beautiful Personalized Ceremonies</span>
+<span class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Vows Renewals</span>
+<span class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Elopements</span>
+<span class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> LGBTQ+ Friendly</span>
+<span class="flex items-center gap-2"><span class="text-[#d4af37]">✓</span> Non-Religious &amp; Religious</span>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<div class="relative flex flex-col bg-white rounded-3xl shadow-[0_0_20px_rgba(255,200,210,0.4)] overflow-hidden border-2 border-[#d4af37]">
+<div class="bg-gradient-to-r from-[#d4af37] to-[#f3e5ab] py-4 text-center relative">
+<p class="text-[#990000] font-bold font-serif uppercase tracking-widest text-sm">Love, Honor, Cherish</p>
+<div class="absolute top-2 left-2 text-white/40"><span class="material-symbols-outlined">filter_vintage</span></div>
+<div class="absolute bottom-2 right-2 text-white/40"><span class="material-symbols-outlined">filter_vintage</span></div>
+</div>
+<div class="p-8 flex-1 flex flex-col items-center">
+<h3 class="text-4xl font-script text-[#990000] text-center mb-2">Wedding Ceremony</h3>
+<div class="text-center mb-6">
+<span class="text-5xl font-bold text-slate-900">$250</span>
+</div>
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-rose-300 to-transparent mb-6"></div>
+<ul class="flex-1 space-y-4 mb-8 w-full">
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite</span>
+<span class="text-base font-serif">Full Custom Ceremony Service</span>
+</li>
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite</span>
+<span class="text-base font-serif">Pre-ceremony Consultation</span>
+</li>
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite</span>
+<span class="text-base font-serif">Signing &amp; Filing of Marriage License</span>
+</li>
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite</span>
+<span class="text-base font-serif">Rehearsal (Optional Add-on)</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-[#d4af37] to-[#b08d1a] text-white font-bold hover:shadow-lg hover:scale-105 transition-all uppercase tracking-wider text-sm" data-scroll-to="contact" data-service="Wedding Ceremony" data-cta="book-wedding">
+                        Book Your Special Day
+                    </button>
+</div>
+</div>
+<div class="relative flex flex-col bg-white rounded-3xl shadow-xl overflow-hidden border border-rose-200 hover:border-[#d4af37] transition-all group">
+<div class="bg-[#ffe6f2] py-4 text-center group-hover:bg-[#ffccd5] transition-colors">
+<p class="text-[#990000] font-bold font-serif uppercase tracking-widest text-sm">Simple &amp; Intimate</p>
+</div>
+<div class="p-8 flex-1 flex flex-col items-center">
+<h3 class="text-4xl font-script text-[#990000] text-center mb-2">Elopement</h3>
+<div class="text-center mb-6">
+<span class="text-5xl font-bold text-slate-900">$200</span>
+</div>
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-rose-300 to-transparent mb-6"></div>
+<ul class="flex-1 space-y-4 mb-8 w-full">
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite_border</span>
+<span class="text-base font-serif">Short &amp; Sweet Ceremony</span>
+</li>
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite_border</span>
+<span class="text-base font-serif">Location of Your Choice</span>
+</li>
+<li class="flex items-start gap-3 text-slate-700">
+<span class="material-symbols-outlined text-rose-400 shrink-0">favorite_border</span>
+<span class="text-base font-serif">Signing &amp; Filing of Marriage License</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-full bg-white border-2 border-[#d4af37] text-[#990000] font-bold hover:bg-[#ffe6f2] transition-colors uppercase tracking-wider text-sm" data-scroll-to="contact" data-service="Elopement Ceremony" data-cta="book-elopement">
+                        Book Elopement
+                    </button>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-rose-200 shadow-sm">
+<span class="material-symbols-outlined text-rose-500">diversity_1</span>
+<span class="text-sm font-bold text-[#990000] uppercase tracking-wide">Proudly LGBTQ Friendly</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 italic">* Prices subject to change based on travel distance. Non-refundable deposit required.</p>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+<svg class="relative block w-[calc(100%+1.3px)] h-[50px] fill-[#221f10]" data-name="Layer 1" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+</svg>
+</div>
+</section>
+<section class="py-20 bg-[#221f10] text-white" id="fees">
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-12">
+<span class="material-symbols-outlined text-5xl text-[#d4af37] mb-4">commute</span>
+<h2 class="text-4xl font-serif font-bold text-white mb-2">Mobile Travel Fees</h2>
+<p class="text-[#f3e5ab]/80 font-serif italic">Transparent pricing for our convenient "We come to you" service.</p>
+</div>
+<div class="bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm rounded-2xl border border-[#d4af37]/30 p-8 shadow-glow">
+<div class="grid md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#d4af37]/20">
+<div class="flex flex-col items-center p-4">
+<h4 class="text-[#f3e5ab] font-bold text-lg mb-2 uppercase tracking-wide">Base Fee</h4>
+<p class="text-4xl font-bold text-white mb-1">$25</p>
+<p class="text-sm text-gray-400 mt-2">Within 10 miles</p>
+</div>
+<div class="flex flex-col items-center p-4">
+<h4 class="text-[#f3e5ab] font-bold text-lg mb-2 uppercase tracking-wide">Mid Range</h4>
+<p class="text-4xl font-bold text-white mb-1">$45</p>
+<p class="text-sm text-gray-400 mt-2">11 - 25 miles</p>
+</div>
+<div class="flex flex-col items-center p-4">
+<h4 class="text-[#f3e5ab] font-bold text-lg mb-2 uppercase tracking-wide">Long Distance</h4>
+<p class="text-4xl font-bold text-white mb-1">$65+</p>
+<p class="text-sm text-gray-400 mt-2">26+ miles</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-[#d4af37]/20 text-center">
+<p class="text-sm text-gray-300">
+<span class="text-[#d4af37] font-bold">Note:</span> Travel fees are in addition to state-regulated notarization fees ($10 per stamp/signature). After hours and holiday surcharges may apply.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#1a180d] border-t border-[#d4af37]/20 pt-16 pb-8" id="contact" tabindex="-1">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="space-y-4">
+<h3 class="text-3xl font-script text-white">Laws-Bell<span class="text-[#d4af37]">.</span></h3>
+<p class="text-gray-400 text-sm leading-relaxed font-serif">
+                    Professional mobile notary and officiant services bringing convenience and peace of mind directly to your doorstep.
+                </p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-[#d4af37] flex items-center justify-center text-slate-900 hover:bg-white transition-colors" href="https://www.facebook.com/" target="_blank" rel="noopener">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#d4af37] hover:text-slate-900 transition-colors" href="mailto:hello@lawsbellnotary.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-[#d4af37] font-bold uppercase tracking-widest text-sm">Contact</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-gray-300">
+<span class="material-symbols-outlined text-[#d4af37] text-xl mt-0.5">location_on</span>
+<span class="text-sm">Serving Memphis &amp; Surrounding Areas</span>
+</li>
+<li class="flex items-center gap-3 text-gray-300">
+<span class="material-symbols-outlined text-[#d4af37] text-xl">phone_iphone</span>
+<a class="text-sm font-bold text-white text-lg" href="tel:+15551234567">(555) 123-4567</a>
+</li>
+<li class="flex items-center gap-3 text-gray-300">
+<span class="material-symbols-outlined text-[#d4af37] text-xl">email</span>
+<a class="text-sm" href="mailto:hello@lawsbellnotary.com">hello@lawsbellnotary.com</a>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-[#d4af37] font-bold uppercase tracking-widest text-sm">Hours</h4>
+<ul class="space-y-2 text-sm text-gray-400">
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span>Monday - Friday</span>
+<span class="text-white">9:00 AM - 7:00 PM</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span>Saturday</span>
+<span class="text-white">10:00 AM - 4:00 PM</span>
+</li>
+<li class="flex justify-between pt-2">
+<span>Sunday</span>
+<span class="text-[#d4af37] font-bold">By Appt Only</span>
+</li>
+</ul>
+<p class="text-xs text-[#d4af37] mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">star</span> Available Evenings &amp; Weekends
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#d4af37] font-bold uppercase tracking-widest text-sm">Ready to Book?</h4>
+<p class="text-xs text-gray-500">Secure your appointment today. Same-day service available upon request.</p>
+<button class="gold-shimmer w-full py-3 rounded font-bold text-slate-900 shadow-lg text-sm uppercase tracking-wide border border-[#f3e5ab]" data-scroll-to="contact" data-cta="book-footer">
+                    Book Appointment
+                </button>
+</div>
+</div>
+<div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-600">© 2024 Laws-Bell Mobile Notary Services. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-xs text-gray-500 hover:text-[#d4af37]" href="#privacy-policy" data-modal-open="privacy-policy">Privacy Policy</a>
+<a class="text-xs text-gray-500 hover:text-[#d4af37]" href="#terms-of-service" data-modal-open="terms-of-service">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="hidden fixed inset-0 z-50 items-center justify-center bg-black/60 px-4" data-modal="privacy-policy" aria-hidden="true" role="dialog" aria-modal="true">
+<div class="bg-white text-slate-900 max-w-2xl w-full rounded-2xl border-2 border-[#d4af37] shadow-2xl">
+<div class="flex items-center justify-between px-6 py-4 border-b border-[#d4af37]/30">
+<h3 class="text-xl font-serif font-bold text-[#990000]">Privacy Policy</h3>
+<button class="text-[#990000] font-bold text-sm uppercase tracking-wider" data-modal-close="privacy-policy">Close</button>
+</div>
+<div class="px-6 py-5 space-y-4 text-sm text-slate-700 font-serif">
+<p>We collect only the information needed to schedule and complete notary or officiant services, including contact details and appointment preferences.</p>
+<p>Information is never sold and is shared only with service partners required to fulfill your booking.</p>
+<p>For questions or data requests, contact us at hello@lawsbellnotary.com.</p>
+</div>
+</div>
+</div>
+
+<div class="hidden fixed inset-0 z-50 items-center justify-center bg-black/60 px-4" data-modal="terms-of-service" aria-hidden="true" role="dialog" aria-modal="true">
+<div class="bg-white text-slate-900 max-w-2xl w-full rounded-2xl border-2 border-[#d4af37] shadow-2xl">
+<div class="flex items-center justify-between px-6 py-4 border-b border-[#d4af37]/30">
+<h3 class="text-xl font-serif font-bold text-[#990000]">Terms of Service</h3>
+<button class="text-[#990000] font-bold text-sm uppercase tracking-wider" data-modal-close="terms-of-service">Close</button>
+</div>
+<div class="px-6 py-5 space-y-4 text-sm text-slate-700 font-serif">
+<p>Appointments are confirmed after scheduling and may require a non-refundable deposit for officiant services.</p>
+<p>Travel fees vary by distance and are added to state-regulated notarization fees.</p>
+<p>Cancellations and reschedules are accommodated when possible with at least 24 hours notice.</p>
+</div>
+</div>
+</div>
+
+<div class="sr-only" aria-live="polite" id="interaction-status"></div>
+
+<script>
+const header = document.querySelector("header");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const interactionStatus = document.getElementById("interaction-status");
+const sectionIds = ["home", "about", "notary-services", "officiant-services", "fees", "contact"];
+const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+const navLinks = Array.from(document.querySelectorAll("nav a[href^='#']"));
+
+const getHeaderOffset = () => (header ? header.getBoundingClientRect().height : 0);
+
+const announce = (message) => {
+    if (interactionStatus) {
+        interactionStatus.textContent = message;
+    }
+};
+
+const setActiveNav = () => {
+    const scrollPosition = window.scrollY + getHeaderOffset() + 16;
+    let activeId = "home";
+    for (const section of sections) {
+        if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+            activeId = section.id;
+        }
+    }
+    navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${activeId}`;
+        if (isActive) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
+        }
+        const underline = link.querySelector("span.absolute");
+        if (underline) {
+            underline.style.width = isActive ? "100%" : "";
+        }
+    });
+};
+
+const scrollToSection = (targetId, shouldUpdateHash = true) => {
+    const target = document.getElementById(targetId);
+    if (!target) {
+        return;
+    }
+    const top = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset() - 8;
+    window.scrollTo({
+        top,
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+    });
+    if (shouldUpdateHash) {
+        history.pushState(null, "", `#${targetId}`);
+    }
+    if (targetId === "contact") {
+        target.focus({ preventScroll: true });
+    }
+};
+
+const handleHashNavigation = () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+        scrollToSection(hash, false);
+    }
+};
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+            event.preventDefault();
+            const targetId = href.replace("#", "");
+            scrollToSection(targetId);
+        }
+    });
+});
+
+document.querySelectorAll("[data-scroll-to]").forEach((element) => {
+    const targetId = element.getAttribute("data-scroll-to");
+    const service = element.getAttribute("data-service");
+    const handleActivation = (event) => {
+        if (event.type === "keydown") {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+            event.preventDefault();
+        }
+        if (service) {
+            document.body.dataset.selectedService = service;
+            announce(`Selected ${service} service. Scroll to contact to book.`);
+        }
+        if (targetId) {
+            scrollToSection(targetId);
+        }
+    };
+    element.addEventListener("click", handleActivation);
+    element.addEventListener("keydown", handleActivation);
+});
+
+document.querySelectorAll("[data-action='call']").forEach((button) => {
+    button.addEventListener("click", () => {
+        const phone = button.getAttribute("data-phone") || "+15551234567";
+        window.location.href = `tel:${phone}`;
+    });
+});
+
+const openModal = (modalId) => {
+    const modal = document.querySelector(`[data-modal='${modalId}']`);
+    if (!modal) {
+        return;
+    }
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    const focusTarget = modal.querySelector("[data-modal-close]") || modal;
+    focusTarget.focus();
+};
+
+const closeModal = (modalId) => {
+    const modal = document.querySelector(`[data-modal='${modalId}']`);
+    if (!modal) {
+        return;
+    }
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+};
+
+document.querySelectorAll("[data-modal-open]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const modalId = link.getAttribute("data-modal-open");
+        if (modalId) {
+            openModal(modalId);
+            history.pushState(null, "", `#${modalId}`);
+        }
+    });
+});
+
+document.querySelectorAll("[data-modal-close]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const modalId = button.getAttribute("data-modal-close");
+        if (modalId) {
+            closeModal(modalId);
+            history.pushState(null, "", "#contact");
+        }
+    });
+});
+
+document.querySelectorAll("[data-modal]").forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            const modalId = modal.getAttribute("data-modal");
+            if (modalId) {
+                closeModal(modalId);
+                history.pushState(null, "", "#contact");
+            }
+        }
+    });
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        document.querySelectorAll("[data-modal]").forEach((modal) => {
+            if (!modal.classList.contains("hidden")) {
+                const modalId = modal.getAttribute("data-modal");
+                if (modalId) {
+                    closeModal(modalId);
+                    history.pushState(null, "", "#contact");
+                }
+            }
+        });
+    }
+});
+
+let scrollTicking = false;
+window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+            setActiveNav();
+            scrollTicking = false;
+        });
+    }
+});
+
+window.addEventListener("popstate", () => {
+    const hash = window.location.hash.replace("#", "");
+    const modalTarget = document.querySelector(`[data-modal='${hash}']`);
+    if (modalTarget) {
+        openModal(hash);
+        return;
+    }
+    document.querySelectorAll("[data-modal]").forEach((modal) => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        modal.setAttribute("aria-hidden", "true");
+    });
+    document.body.style.overflow = "";
+    handleHashNavigation();
+});
+
+window.addEventListener("load", () => {
+    const hash = window.location.hash.replace("#", "");
+    const modalTarget = document.querySelector(`[data-modal='${hash}']`);
+    if (modalTarget) {
+        openModal(hash);
+    } else if (hash) {
+        handleHashNavigation();
+    }
+    setActiveNav();
+});
+</script>
+
+</body></html>
